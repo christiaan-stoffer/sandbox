@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>@ViewBag.Title</title>
+        <link href="@Url.Content("~/static/style/main.css")" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div id="header">
+            <a id="logo" href="@Url.Action("index", "home")" title="Home">
+            </a>
+            
+            <ul class="nav">
+                <li>
+                    <a href="@Url.Action("index", "home")" title="Home">Home</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("index", "Customers")">Klanten</a>
+                </li>
+                <li>Nav item 2</li>
+            </ul>
+        </div>
+        
+        <div id="toolbar">
+            
+        </div>
+
+        @RenderBody()
+    </body>
+</html>
