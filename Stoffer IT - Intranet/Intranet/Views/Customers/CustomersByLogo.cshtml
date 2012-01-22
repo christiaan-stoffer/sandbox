@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Intranet.Model.ImageCustomerLink>
+
+<div class="overview thumbs r14-7">
+
+@foreach (var link in Model)
+{     
+    <div class="item">
+        <a href="@link.Url" title="@link.Name" style="background: url('@link.ImageUrl')" ></a>
+    </div>
+}
+
+</div>

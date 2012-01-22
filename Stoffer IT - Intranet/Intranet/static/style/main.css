@@ -37,3 +37,18 @@ div#toolbar {
     margin-top: 2em;
     border-top: 1px solid #9e9e9e;
 }
+div#page-container {
+    margin: 0.5em;
+}
+div.pl-left {
+    width: 20em;
+    padding: 0.5em;
+    position: absolute;
+    z-index: 1;
+}
+div.pl-right {
+    margin-left: 21.5em;
+}
+.clear-float {
+    clear: both;
+}

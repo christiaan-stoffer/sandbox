@@ -1,0 +1,21 @@
+﻿div.overview {
+    padding: 0.5em;
+}
+div.overview.thumbs div.item 
+{
+    display: inline-block;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+div.overview.thumbs div.item a 
+{
+    width: 7em;
+    height: 7em;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+div.overview.thumbs.r14-7 div.item a {
+    width: 14em;
+    height: 7em;
+}

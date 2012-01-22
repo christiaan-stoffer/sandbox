@@ -1,6 +1,63 @@
-﻿@{
+﻿@model Intranet.Model.CustomerOverview<Intranet.Model.ImageCustomerLink>
+@{
     ViewBag.Title = "Klanten";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>@ViewBag.Title</h1>
+<div id="page-container">
+
+    <div class="pl-left">
+    
+        <div class="widget">
+            <div class="inner">
+                <input type="text"/> <input type="submit" value="Zoeken"/>
+            </div>
+        </div>
+        
+        <div class="widget">
+            <div class="inner">
+                <ul>
+                    <li>
+                        <a href="#" title="Klanten">Klanten</a>
+                        <ul>
+                            <li><a href="#">Op alfabetische volgorde</a></li>
+                            
+                            <li><a href="#">Gecategoriseerd</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="widget">
+            <div class="inner">
+                <div class="title">
+                    Snel naar...
+                </div>
+                
+                <div class="customer">
+                    <div class="image">
+                        [Image]
+                    </div>
+                    <div class="details">
+                        <div class="name">
+                            [Naam klant]
+                        </div>
+                        <div class="description">
+                            [Korte omschrijving...]
+                        </div>
+                    </div>
+                    <div class="clear-float"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="pl-right">
+        <h1>@ViewBag.Title</h1>
+        @Html.Partial("CustomersByLogo", Model.Customers)
+    </div>
+
+</div>

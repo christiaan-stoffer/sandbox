@@ -1,0 +1,36 @@
+﻿div.widget 
+{
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 1em;
+}
+
+div.widget div.inner {
+    padding: 0.25em;
+}
+
+div.widget div.title 
+{
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+div.customer div.image {
+    float: left;
+    width: 7em;
+    height: 7em;
+    background-color: #f4d80d;
+}
+div.customer div.details {
+    float: right;
+    width: 12.5em;
+}
+div.customer div.details div.name {
+    padding:0 0.5em;
+    margin-bottom: 0.25em;
+}
+div.customer div.details div.description {
+    padding: 0 0.5em;
+    font-style: italic;
+    color: #9c9c9c;
+}

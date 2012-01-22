@@ -1,0 +1,5 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".css" #>
+<#@ include file="main.css" #>
+<#@ include file="overviews.css" #>
+<#@ include file="widgets.css" #>
