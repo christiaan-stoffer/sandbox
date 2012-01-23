@@ -75,6 +75,8 @@
     <Content Include="Global.asax" />
     <Content Include="static\img\logo-web.png" />
     <Content Include="static\script\imageuploader.js" />
+    <Content Include="static\script\lib\jquery-1.7.1.min.js" />
+    <Content Include="static\script\pageload.js" />
     <Content Include="static\script\_core.js">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -100,9 +102,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="static\script\lib\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
