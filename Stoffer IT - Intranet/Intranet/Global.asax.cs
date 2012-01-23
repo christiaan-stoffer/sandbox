@@ -20,6 +20,7 @@ namespace Intranet
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("{resource}.image/{*pathInfo}");
 
             routes.MapRoute(
                 "Default", // Route name

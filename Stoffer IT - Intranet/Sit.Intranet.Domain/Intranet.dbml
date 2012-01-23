@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="StofferIT_Intranet_Dev" Class="IntranetDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost\sharepoint;Initial Catalog=StofferIT_Intranet_Dev;Integrated Security=True" SettingsObjectName="Sit.Intranet.Domain.Properties.Settings" SettingsPropertyName="StofferIT_Intranet_DevConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Address" Member="Addresses">
+    <Type Name="Address">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Street" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PostalCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="HouseNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CountryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Address_CustomerAddress" Member="CustomerAddresses" ThisKey="Id" OtherKey="AddressId" Type="CustomerAddress" />
+      <Association Name="Country_Address" Member="Country" ThisKey="CountryId" OtherKey="Id" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CustomerAddress" Member="CustomerAddresses">
+    <Type Name="CustomerAddress">
+      <Column Name="AddressId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="CustomerAddress_Company" Member="Companies" ThisKey="Name" OtherKey="PostAddress" Type="Company" />
+      <Association Name="CustomerAddress_Company1" Member="Companies1" ThisKey="Name" OtherKey="VisitAddress" Type="Company" />
+      <Association Name="Address_CustomerAddress" Member="Address" ThisKey="AddressId" OtherKey="Id" Type="Address" IsForeignKey="true" />
+      <Association Name="Company_CustomerAddress" Member="Company" ThisKey="CustomerId" OtherKey="Id" Type="Company" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Company" Member="Companies">
+    <Type Name="Company">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="LongDescription" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PostAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VisitAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Company_CustomerAddress" Member="CustomerAddresses" ThisKey="Id" OtherKey="CustomerId" Type="CustomerAddress" />
+      <Association Name="CustomerAddress_Company" Member="CustomerAddress" ThisKey="PostAddress" OtherKey="Name" Type="CustomerAddress" IsForeignKey="true" />
+      <Association Name="CustomerAddress_Company1" Member="CustomerAddress1" ThisKey="VisitAddress" OtherKey="Name" Type="CustomerAddress" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Country" Member="Countries">
+    <Type Name="Country">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ISO2" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="LocalizedName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Country_Address" Member="Addresses" ThisKey="Id" OtherKey="CountryId" Type="Address" />
+    </Type>
+  </Table>
+</Database>

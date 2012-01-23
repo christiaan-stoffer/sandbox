@@ -66,12 +66,20 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\ImageHandler.cs" />
+    <Compile Include="Helpers\WidgetHelper.cs" />
     <Compile Include="Model\CustomerLink.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="static\img\logo-web.png" />
+    <Content Include="static\script\imageuploader.js" />
+    <Content Include="static\script\_core.js">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_core.tt</DependentUpon>
+    </Content>
     <Content Include="static\style\main.css" />
     <Content Include="static\style\overviews.css" />
     <Content Include="static\style\widgets.css" />
@@ -93,7 +101,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="static\script\" />
+    <Folder Include="static\script\lib\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -108,10 +116,15 @@
     <Content Include="Views\Customers\CustomersByLogo.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="static\script\_core.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>_core.js</LastGenOutput>
+    </None>
     <None Include="static\style\_core.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>_core.css</LastGenOutput>
     </None>
+    <Content Include="Views\Shared\ImageUploader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intranet", "Intranet\Intranet.csproj", "{1E024CFD-3E11-4C14-9426-F45CBAC00B5E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sit.Intranet.Domain", "Sit.Intranet.Domain\Sit.Intranet.Domain.csproj", "{DC2E10B0-FE41-4885-80DD-C84D10DCE471}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{1E024CFD-3E11-4C14-9426-F45CBAC00B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E024CFD-3E11-4C14-9426-F45CBAC00B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E024CFD-3E11-4C14-9426-F45CBAC00B5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC2E10B0-FE41-4885-80DD-C84D10DCE471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC2E10B0-FE41-4885-80DD-C84D10DCE471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC2E10B0-FE41-4885-80DD-C84D10DCE471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC2E10B0-FE41-4885-80DD-C84D10DCE471}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

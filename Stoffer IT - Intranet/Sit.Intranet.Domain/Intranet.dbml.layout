@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.625, 8.5" name="Intranet">
+  <DataContextMoniker Name="/IntranetDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ad5d463f-c12c-4cae-b315-256523da08bb" absoluteBounds="3.625, 0.5, 2, 1.7535424804687503">
+      <DataClassMoniker Name="/IntranetDataContext/Address" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1dc119b8-4471-4515-8fb6-43af66ad9650" absoluteBounds="3.64, 0.96, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dd58ecaf-e351-492c-845d-0e1f962d2983" absoluteBounds="6.25, 0.5, 2, 1.2605004882812503">
+      <DataClassMoniker Name="/IntranetDataContext/CustomerAddress" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81bf8e97-b9c9-48f7-a64e-8896e2922769" absoluteBounds="6.265, 0.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="006092fc-d77c-43ca-a431-8c53e9e8247a" absoluteBounds="9.375, 0.5, 2, 1.7535424804687503">
+      <DataClassMoniker Name="/IntranetDataContext/Company" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b196b9ad-a471-47e4-9c76-c42599eeb6b9" absoluteBounds="9.39, 0.96, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="037d71bc-c21a-4804-ad11-1880f8278fdc" absoluteBounds="1, 0.5, 2, 1.4248478190104164">
+      <DataClassMoniker Name="/IntranetDataContext/Country" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd422178-ea43-48a0-8591-dac6167ba884" absoluteBounds="1.0150000000000001, 0.96, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.625 : 1.13025024414063); (6.25 : 1.13025024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/IntranetDataContext/Address/Address_CustomerAddress" />
+      <nodes>
+        <classShapeMoniker Id="ad5d463f-c12c-4cae-b315-256523da08bb" />
+        <classShapeMoniker Id="dd58ecaf-e351-492c-845d-0e1f962d2983" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.375 : 1.13025024414063); (8.25 : 1.13025024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/IntranetDataContext/Company/Company_CustomerAddress" />
+      <nodes>
+        <classShapeMoniker Id="006092fc-d77c-43ca-a431-8c53e9e8247a" />
+        <classShapeMoniker Id="dd58ecaf-e351-492c-845d-0e1f962d2983" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 0.752625122070313); (9.375 : 0.752625122070313)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/IntranetDataContext/CustomerAddress/CustomerAddress_Company" />
+      <nodes>
+        <classShapeMoniker Id="dd58ecaf-e351-492c-845d-0e1f962d2983" />
+        <classShapeMoniker Id="006092fc-d77c-43ca-a431-8c53e9e8247a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 1.50787536621094); (9.375 : 1.50787536621094)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/IntranetDataContext/CustomerAddress/CustomerAddress_Company1" />
+      <nodes>
+        <classShapeMoniker Id="dd58ecaf-e351-492c-845d-0e1f962d2983" />
+        <classShapeMoniker Id="006092fc-d77c-43ca-a431-8c53e9e8247a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 1.21242390950521); (3.625 : 1.21242390950521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/IntranetDataContext/Country/Country_Address" />
+      <nodes>
+        <classShapeMoniker Id="037d71bc-c21a-4804-ad11-1880f8278fdc" />
+        <classShapeMoniker Id="ad5d463f-c12c-4cae-b315-256523da08bb" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

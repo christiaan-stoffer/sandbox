@@ -1,4 +1,5 @@
-﻿@model Intranet.Model.CustomerOverview<Intranet.Model.ImageCustomerLink>
+﻿@using Intranet.Helpers
+@model Intranet.Model.CustomerOverview<Intranet.Model.ImageCustomerLink>
 @{
     ViewBag.Title = "Klanten";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,50 +9,42 @@
 
     <div class="pl-left">
     
-        <div class="widget">
-            <div class="inner">
-                <input type="text"/> <input type="submit" value="Zoeken"/>
-            </div>
-        </div>
+        @using(Html.BeginWidget())
+        {
+        <input type="text"/> <input type="submit" value="Zoeken"/>
+        }
         
-        <div class="widget">
-            <div class="inner">
-                <ul>
-                    <li>
-                        <a href="#" title="Klanten">Klanten</a>
-                        <ul>
-                            <li><a href="#">Op alfabetische volgorde</a></li>
+        @using (Html.BeginWidget())
+        {
+            <ul>
+                <li>
+                    <a href="#" title="Klanten">Klanten</a>
+                    <ul>
+                        <li><a href="#">Op alfabetische volgorde</a></li>
                             
-                            <li><a href="#">Gecategoriseerd</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="widget">
-            <div class="inner">
-                <div class="title">
-                    Snel naar...
-                </div>
-                
-                <div class="customer">
-                    <div class="image">
-                        [Image]
-                    </div>
-                    <div class="details">
-                        <div class="name">
-                            [Naam klant]
-                        </div>
-                        <div class="description">
-                            [Korte omschrijving...]
-                        </div>
-                    </div>
-                    <div class="clear-float"></div>
-                </div>
+                        <li><a href="#">Gecategoriseerd</a></li>
+                    </ul>
+                </li>
+            </ul>
+        }
 
+        @using(Html.BeginWidget("Snel naar..."))
+        {
+            <div class="customer">
+                <div class="image">
+                    [Image]
+                </div>
+                <div class="details">
+                    <div class="name">
+                        [Naam klant]
+                    </div>
+                    <div class="description">
+                        [Korte omschrijving...]
+                    </div>
+                </div>
+                <div class="clear-float"></div>
             </div>
-        </div>
+        }
 
     </div>
 
