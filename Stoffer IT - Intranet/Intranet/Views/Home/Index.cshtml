@@ -5,4 +5,9 @@
 
 <h1>Intranet</h1>
 
-@Html.Partial("ImageUploader")
+@using (Html.BeginForm("HandleUpload", "Home", FormMethod.Post, new { enctype="multipart/form-data"}))
+{
+    <input type="file" name="postedFile" />
+    
+    <input type="submit" value="send"/>
+}

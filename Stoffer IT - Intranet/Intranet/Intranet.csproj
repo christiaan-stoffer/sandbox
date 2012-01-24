@@ -61,8 +61,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageUploadController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -74,9 +76,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="static\img\logo-web.png" />
-    <Content Include="static\script\imageuploader.js" />
     <Content Include="static\script\lib\jquery-1.7.1.min.js" />
-    <Content Include="static\script\pageload.js" />
     <Content Include="static\script\_core.js">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,7 +102,9 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Binders\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
@@ -125,6 +127,7 @@
       <LastGenOutput>_core.css</LastGenOutput>
     </None>
     <Content Include="Views\Shared\ImageUploader.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

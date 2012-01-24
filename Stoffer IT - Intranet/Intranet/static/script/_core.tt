@@ -1,10 +1,4 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ output extension=".js" #>
-/* JQuery */
+/* JQUERY */
 <#@ include file="lib\jquery-1.7.1.min.js" #>
-
-/* Image uploader */
-<#@ include file="imageuploader.js" #>
-
-/* Page load */
-<#@ include file="pageload.js" #>

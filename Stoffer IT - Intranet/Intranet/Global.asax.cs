@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿
 using System.Web.Mvc;
 using System.Web.Routing;
 
@@ -24,9 +21,16 @@ namespace Intranet
 
             routes.MapRoute(
                 "Default", // Route name
-                "{controller}/{action}/{id}", // URL with parameters
+                "", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
+
+            routes.MapRoute("Customers", "klanten", new {controller = "Customers", action = "Index"});
+
+            routes.MapRoute("Customer", "klanten/{name}/{action}", new { controller = "Customer", action = "Index", name = string.Empty });
+
+            routes.MapRoute("CustomerFiles1043", "klanten/{name}/bestand/{*filepath}", new { controller = "Customer", action = "GetFile", name = string.Empty, filepath = string.Empty });
+            routes.MapRoute("CustomerFiles1033", "klanten/{name}/file/{*filepath}", new { controller = "Customer", action = "GetFile", name = string.Empty, filepath = string.Empty });
 
         }
 

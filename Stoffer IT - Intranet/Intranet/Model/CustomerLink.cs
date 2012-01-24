@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
 
 namespace Intranet.Model
 {
@@ -22,15 +22,5 @@ namespace Intranet.Model
     {
         public IEnumerable<T> Customers { get; set; }
     }
-
-    public class ImageFile
-    {
-        public string Name { get; set; }
-
-        public string Size { get; set; }
-
-        public Tuple<int,int> Dimensions { get; set; } 
-    }
-
 
 }
