@@ -13,7 +13,7 @@ div#header {
     height: 3em; 
 }
 div#header a#logo {
-    background: url('/static/img/logo-web.png');
+    background: url('/static/img/logo-web.png-evenweg');
     background-repeat: no-repeat;
     background-position: center center;
     min-width: 185px;
