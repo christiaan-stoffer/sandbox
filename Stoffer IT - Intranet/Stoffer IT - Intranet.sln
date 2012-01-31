@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sit.Framework.Portal", "Sit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal", "Portal\Portal.csproj", "{3AF7F2AC-9C6E-4EB9-B0D7-1CE855EEDF2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sit.Framework.Portal.Test", "Sit.Framework.Portal.Test\Sit.Framework.Portal.Test.csproj", "{D81A3563-FF70-4D96-BD39-71DCCB947015}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{3AF7F2AC-9C6E-4EB9-B0D7-1CE855EEDF2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AF7F2AC-9C6E-4EB9-B0D7-1CE855EEDF2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AF7F2AC-9C6E-4EB9-B0D7-1CE855EEDF2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81A3563-FF70-4D96-BD39-71DCCB947015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81A3563-FF70-4D96-BD39-71DCCB947015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81A3563-FF70-4D96-BD39-71DCCB947015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81A3563-FF70-4D96-BD39-71DCCB947015}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
