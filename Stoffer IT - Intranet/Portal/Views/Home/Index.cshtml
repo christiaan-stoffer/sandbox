@@ -1,0 +1,36 @@
+﻿@model Sit.Framework.Portal.Widgets.WidgetPage
+@{
+    ViewBag.Title = "Test pagina";
+    ViewBag.Description = "Welkom op deze pagina.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="header">
+    Header
+</div>
+<div id="content">
+    <div id="inner-content" class="inner">
+        
+        <h1>@ViewBag.Title</h1>
+        <p>
+            @ViewBag.Description
+        </p>
+        <div id="left">
+            <div class="inner">
+                @{ Html.RenderPartial("WidgetPanel", Model["Left"]);}
+            </div>
+        </div>
+        <div id="center">
+            <div class="inner">
+                @{ Html.RenderPartial("WidgetPanel", Model["Center"]);}
+            </div>
+        </div>
+        <div id="right">
+            <div class="inner">
+                @{ Html.RenderPartial("WidgetPanel", Model["Right"]);}
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    Footer
+</div>

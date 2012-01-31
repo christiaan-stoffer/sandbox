@@ -1,0 +1,8 @@
+﻿@model Sit.Framework.Portal.Widgets.WidgetPanel
+
+<div class="sit-widgets">
+    @foreach (var w in Model.Widgets.OrderBy(wi => wi.Order))
+    {
+        Html.RenderPartial("Widget", w.Widget);
+    }
+</div>
