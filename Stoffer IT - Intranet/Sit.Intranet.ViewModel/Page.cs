@@ -19,15 +19,4 @@ namespace Sit.Intranet.ViewModel
 
         public string Title { get; private set; }
     }
-
-    public class RedirectPage : Page
-    {
-        public RedirectPage(string title) : base(title)
-        {
-        }
-
-        public RedirectPage(string title, Page parent) : base(title, parent)
-        {
-        }
-    }
 }
