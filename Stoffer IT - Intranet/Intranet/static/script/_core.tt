@@ -1,4 +1,0 @@
-﻿<#@ template debug="false" hostspecific="false" language="C#" #>
-<#@ output extension=".js" #>
-/* JQUERY */
-<#@ include file="lib\jquery-1.7.1.min.js" #>
