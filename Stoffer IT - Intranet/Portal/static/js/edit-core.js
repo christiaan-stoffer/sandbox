@@ -1,0 +1,6 @@
+﻿document.windowManager = {
+    
+    init : function() {
+        
+    }
+}

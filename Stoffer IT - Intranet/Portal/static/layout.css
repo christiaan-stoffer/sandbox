@@ -16,8 +16,8 @@
 
 #content #inner-content {
     margin: auto;
-    max-width: 760px;
-    min-width: 510px;
+    min-width: 520px;
+    max-width: 960px;
 }
 #content #inner-content.inner {
     padding: 0.5em;
@@ -34,10 +34,10 @@ div.inner {
 
 #header {
     min-height: 8em;
-    background-color: #ace;
+    background-color: #ffaa0f;
 }
 
 #footer 
 {
-    min-height: 40em;
+    min-height: 1em;
 }

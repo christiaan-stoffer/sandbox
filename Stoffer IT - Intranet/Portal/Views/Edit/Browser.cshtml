@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "Browser";
+    Layout = "~/Views/Shared/_editmode.cshtml";
+}
+
+<div id="tab_browser" class="tab">
+    <iframe id="content-frame" src="@Url.Action("Index","Home")"></iframe>
+</div>

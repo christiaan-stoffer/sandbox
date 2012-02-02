@@ -1,0 +1,111 @@
+﻿body,html,iframe#content-frame,div.tab {
+    width: 100%;
+    height: 100%;
+}
+div#tab_browser {
+    overflow: hidden;
+}
+div.hidden {
+    display: none;
+}
+body#sit-edit 
+{
+    margin: 0;
+    padding: 0;
+    background-color: #bbb;
+}
+body,a,td 
+{   
+    font-size: 12px;
+    line-height: 1.5em;
+    font-family: Tahoma, Geneva, sans-serif;
+    letter-spacing: 1px;
+    color: #333;
+}
+iframe#content-frame {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.bg_gr {
+    background-image: url("/static/img/gr-48.png");
+    background-repeat: repeat-x;
+}
+
+.bg_gr_bt {
+    background-image: url("/static/img/gr-48-bt.png");
+    background-repeat: repeat-x;
+}
+
+/* tab_navigation */
+div#tab_navigation {
+    background-color: #777;
+    background-position: 0px 0px;
+    border-bottom: 1px solid #fff;
+    position: absolute;
+    top: 0px;
+    z-index: 10000;
+    width: 100%;
+    height: 27px;
+    vertical-align: middle;
+}
+
+div#tab_navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 7px;
+    border-left: 5px solid #3366ff;
+}
+div#tab_navigation ul li
+{
+    display: inline-block;
+    padding: 0;
+    margin-right: 7px;
+    padding-right: 15px;
+    line-height: 27px;
+    background-image: url("/static/img/divider.png");
+    background-repeat: no-repeat;
+    background-position: right 10px;
+}
+div#tab_navigation ul li a {
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+div#tab_navigation ul li a:hover {
+    text-decoration: underline;
+}
+
+/* tab_main */
+
+div#tab_main div#header 
+{
+    margin-top: 28px;
+    background-color: #3366ff;
+    color: #fff;
+    height: 52px;
+    border-bottom: 1px solid #666;
+}
+div#tab_main div#header div.logo {
+    background-image: url("/static/img/logo.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 52px;
+    width: 200px;
+    float: right;
+    background-color: #fff;
+    border-left: 5px solid #777;
+}
+div#tab_main div#toolpane 
+{
+    background-position: 0 -36px;
+    background-color: #fff;
+    min-height: 200px;
+}
+div#tab_main div#footer 
+{
+    background-position: 0 -32px;
+    padding-top: 6px;
+}
