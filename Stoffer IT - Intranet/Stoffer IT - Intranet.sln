@@ -7,6 +7,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal", "Portal\Portal.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sit.Framework.Portal.Test", "Sit.Framework.Portal.Test\Sit.Framework.Portal.Test.csproj", "{D81A3563-FF70-4D96-BD39-71DCCB947015}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{6817D3E4-BAF3-45CA-AAFC-A75AF39DDC20}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Moq", "Moq", "{DBE07C41-B9BE-4291-94F2-4DD1EBB49827}"
+	ProjectSection(SolutionItems) = preProject
+		Lib\Moq\Moq.dll = Lib\Moq\Moq.dll
+		Lib\Moq\Moq.pdb = Lib\Moq\Moq.pdb
+		Lib\Moq\Moq.xml = Lib\Moq\Moq.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,5 +37,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DBE07C41-B9BE-4291-94F2-4DD1EBB49827} = {6817D3E4-BAF3-45CA-AAFC-A75AF39DDC20}
 	EndGlobalSection
 EndGlobal

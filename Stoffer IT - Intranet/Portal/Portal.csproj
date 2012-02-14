@@ -72,6 +72,10 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="static\edit.css" />
+    <Content Include="static\img\divider.png" />
+    <Content Include="static\img\gr-48-bt.png" />
+    <Content Include="static\img\gr-48.png" />
+    <Content Include="static\img\logo.png" />
     <Content Include="static\js\edit-core.js" />
     <Content Include="static\js\lib\jquery-1.7.1.min.js" />
     <Content Include="static\layout.css" />
