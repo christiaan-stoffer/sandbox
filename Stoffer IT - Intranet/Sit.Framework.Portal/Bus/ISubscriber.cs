@@ -4,9 +4,4 @@ namespace Sit.Framework.Portal.Bus
     {
         void OnMessageReceived(TMessage message);
     }
-
-    public interface IChannelSubscriber<in TMessage> : ISubscriber<TMessage>
-    {
-        string Channel { get; }
-    }
 }
