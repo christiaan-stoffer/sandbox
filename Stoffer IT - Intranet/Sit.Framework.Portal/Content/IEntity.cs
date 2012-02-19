@@ -2,10 +2,9 @@ using System;
 
 namespace Sit.Framework.Portal.Content
 {
-    public interface IEntity<out TKey>
+    public interface IEntity
     {
-        TKey Key { get; }
-
+        int Key { get; }
         Guid UniqueId { get; set; }
         DateTime Created { get; }
         DateTime Modified { get; }

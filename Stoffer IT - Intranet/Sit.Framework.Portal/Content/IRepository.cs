@@ -1,14 +1,14 @@
 namespace Sit.Framework.Portal.Content
 {
-    public interface IRepository<TItem, TKey>
-        where TItem : IEntity<TKey>
+    public interface IRepository<TItem>
+        where TItem : IEntity
     {
-        TKey Create(TItem item);
+        int Create(TItem item);
 
-        void Update(TKey key, TItem before, TItem after);
+        void Update(int key, TItem before, TItem after);
 
-        void Delete(TKey key);
+        void Delete(int key);
 
-        TItem Get(TKey key);
+        TItem Get(int key);
     }
 }
