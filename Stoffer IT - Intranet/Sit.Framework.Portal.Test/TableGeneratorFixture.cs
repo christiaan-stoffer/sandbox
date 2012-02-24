@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using Sit.Framework.Portal.Sql.Generating;
@@ -12,13 +13,15 @@ namespace Sit.Framework.Portal.Test
         [Test]
         public void SimpleGenerate()
         {
-            var gen = Generator.For<IAddress>(GeneratorType.Table);
+            var map = SqlEntityMap.Generate(typeof (IAddress));
+
+            var gen = new TableGenerator();
 
             var builder = new StringBuilder();
 
-            gen.GenerateSql(builder);
+            gen.GenerateSql(map.Entities.First(), builder);
 
-            Trace.Write(builder.ToString());
+            Trace.Write(builder);
         }
     }
 }

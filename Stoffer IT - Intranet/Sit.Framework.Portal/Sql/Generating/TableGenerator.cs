@@ -6,61 +6,45 @@ using Sit.Framework.Portal.Content;
 
 namespace Sit.Framework.Portal.Sql.Generating
 {
-    public class TableGenerator : GeneratorBase, IGenerator
+    public class TableGenerator : IGenerator
     {
-        public const int DefaultNVarcharMaxLength = 50;
-
-        public TableGenerator(Type typeForGenerating) : base(typeForGenerating)
+        public void GenerateSql(SqlEntityInfo entityInfo, StringBuilder builder)
         {
-        }
+            builder.AppendLine(string.Format("CREATE TABLE [{0}] (", entityInfo.Name));
 
-        public void GenerateSql(StringBuilder builder)
-        {
-            builder.AppendLine(string.Format("CREATE TABLE [{0}] (", TypeForGenerating.GetEntityName()));
-
-            var fields = TypeForGenerating.AllInterfaces().SelectMany(t=>t.GetProperties()).Select(prop =>
+            var fields = entityInfo.Properties.Select(prop =>
             {
-                bool needsLengthSpecified;
-                var dbType = GetDbType(prop, out needsLengthSpecified);
-
                 var nullableText = string.Empty;
 
-                var attrs = prop.GetCustomAttributes(typeof(IPortalAttribute), true);
-
-                var type = prop.PropertyType;
-
-                if ((!type.IsGenericType || type.GetGenericTypeDefinition() != typeof (Nullable<>)) &&
-                    !attrs.OfType<NullableAttribute>().Any())
+                if (prop.IsNullable)
                 {
                     nullableText = " NOT NULL";
                 }
                 
                 var typeExtra = string.Empty;
 
-                if (needsLengthSpecified)
+                if (prop.Length != Length.Empty)
                 {
-                    if (attrs.OfType<MultiLineAttribute>().Any())
-                    {
-                        typeExtra = "(MAX)";
-                    }
-
-                    if (attrs.OfType<MaxLengthAttribute>().Any())
-                    {
-                        typeExtra = string.Format("({0})", attrs.OfType<MaxLengthAttribute>().First().Value);
-                    }
-
-                    if (typeExtra.Length == 0)
-                    {
-                        typeExtra = string.Format("({0})", DefaultNVarcharMaxLength);
-                    }
+                    typeExtra = prop.Length == Length.Max ? "(MAX)" : string.Format("({0})", prop.Length);
                 }
 
-                return string.Format("\t[{0}] [{1}]{2}{3}", prop.Name, dbType, typeExtra, nullableText);
+                string identity = string.Empty;
+
+                if (prop.IsKey)
+                {
+                    identity = " IDENTITY(1,1)";
+                }
+
+                return string.Format("\t[{0}] [{1}]{2}{3}{4}", prop.Name, prop.DbType, typeExtra, identity, nullableText);
             });
 
-            builder.AppendLine(string.Join(string.Format(",{0}", Environment.NewLine), fields));
+            builder.AppendLine(string.Join(string.Format(",{0}", Environment.NewLine), fields) + ",");
 
-            builder.AppendLine(")");
+            builder.AppendLine("CONSTRAINT [PK_Address] PRIMARY KEY CLUSTERED");
+            builder.AppendLine("(");
+            builder.AppendLine("[Key] ASC");
+            builder.AppendLine(")WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]");
+            builder.AppendLine(") ON [PRIMARY]");
         }
 
         private static string GetDbType(PropertyInfo prop, out bool needsLengthSpecified)

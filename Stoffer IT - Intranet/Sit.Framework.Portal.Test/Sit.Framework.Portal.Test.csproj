@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EngineFixture.cs" />
     <Compile Include="MessageBusFixture.cs" />
     <Compile Include="PortalFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,6 +4,6 @@ namespace Sit.Framework.Portal.Sql.Generating
 {
     public interface IGenerator
     {
-        void GenerateSql(StringBuilder builder);
+        void GenerateSql(SqlEntityInfo entity, StringBuilder builder);
     }
 }
