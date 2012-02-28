@@ -36,5 +36,15 @@ namespace Sit.Framework.Portal.Test
 
             GeneratorFixtureHelper.RunGenerator(map, gen);
         }
+
+        [Test]
+        public void ReadByKeyProcedureGenerateTest()
+        {
+            var map = SqlEntityMap.Generate(typeof(IAddress));
+
+            var gen = new ReadByKeyProcedureGenerator();
+
+            GeneratorFixtureHelper.RunGenerator(map, gen);
+        }
     }
 }

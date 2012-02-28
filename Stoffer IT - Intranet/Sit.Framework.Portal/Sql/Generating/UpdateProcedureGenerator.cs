@@ -13,7 +13,7 @@ namespace Sit.Framework.Portal.Sql.Generating
 
             IEnumerable<SqlPropertyInfo> allProperties = entity.Properties.ToArray();
 
-            var spParams = allProperties.Select(ParseSqlPropertyInfoForProcedureParam);
+            var spParams = allProperties.Select(CrudProcedureGeneratorsHelpers.ParseSqlPropertyInfoForProcedureParam);
 
             builder.AppendLine(string.Join(string.Format(",{0}", Environment.NewLine), spParams));
 
@@ -25,7 +25,8 @@ namespace Sit.Framework.Portal.Sql.Generating
             builder.AppendLine("SET");
 
             var spTableColumns =
-                allProperties.Select(property => string.Format("\t[{0}] = @{0}", property.Name));
+                allProperties.Where(property=>!property.IsKey)
+                .Select(property => string.Format("\t[{0}] = @{0}", property.Name));
 
             builder.AppendLine(string.Join(string.Format(",{0}", Environment.NewLine), spTableColumns));
             
@@ -36,34 +37,6 @@ namespace Sit.Framework.Portal.Sql.Generating
             builder.AppendLine(string.Format("[{0}] = @{0}", keyProperty.Name));
 
             builder.AppendLine("END");
-        }
-
-        private static string ParseSqlPropertyInfoForProcedureParam(SqlPropertyInfo property)
-        {
-            string nullableText, typeExtra;
-
-            nullableText = null;
-            typeExtra = null;
-
-            if (property.Length != Length.Empty)
-            {
-                typeExtra = property.Length == Length.Max
-                                ? "(MAX)"
-                                : string.Format(
-                                    "({0})",
-                                    property.Length);
-            }
-
-            if (property.IsNullable)
-            {
-                nullableText = " = NULL";
-            }
-
-            return
-                string.Format(
-                    "\t@{0} {1}{2}{3}",
-                    property.Name, property.DbType, typeExtra,
-                    nullableText);
         }
     }
 }

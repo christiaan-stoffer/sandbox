@@ -13,7 +13,7 @@ namespace Sit.Framework.Portal.Sql.Generating
 
             IEnumerable<SqlPropertyInfo> sqlPropertyInfosNoKey = entity.Properties.Where(p => !p.IsKey).ToArray();
 
-            var spParams = sqlPropertyInfosNoKey.Select(ParseSqlPropertyInfoForProcedureParam);
+            var spParams = sqlPropertyInfosNoKey.Select(CrudProcedureGeneratorsHelpers.ParseSqlPropertyInfoForProcedureParam);
 
             builder.AppendLine(string.Join(string.Format(",{0}", Environment.NewLine), spParams));
 
@@ -42,34 +42,6 @@ namespace Sit.Framework.Portal.Sql.Generating
             builder.AppendLine(")");
 
             builder.AppendLine("END");
-        }
-
-        private static string ParseSqlPropertyInfoForProcedureParam(SqlPropertyInfo property)
-        {
-            string nullableText, typeExtra;
-
-            nullableText = null;
-            typeExtra = null;
-            
-            if (property.Length != Length.Empty)
-            {
-                typeExtra = property.Length == Length.Max
-                                ? "(MAX)"
-                                : string.Format(
-                                    "({0})",
-                                    property.Length);
-            }
-
-            if (property.IsNullable)
-            {
-                nullableText = " = NULL";
-            }
-
-            return
-                string.Format(
-                    "\t@{0} {1}{2}{3}",
-                    property.Name, property.DbType, typeExtra,
-                    nullableText);
         }
     }
 }

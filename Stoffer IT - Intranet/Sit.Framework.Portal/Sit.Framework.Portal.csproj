@@ -55,7 +55,9 @@
     <Compile Include="Portal.cs" />
     <Compile Include="Dynamic\Proxy.cs" />
     <Compile Include="Sql\Generating\CreateProcedureGenerator.cs" />
+    <Compile Include="Sql\Generating\CrudProcedureGeneratorsHelpers.cs" />
     <Compile Include="Sql\Generating\DeleteProcedureGenerator.cs" />
+    <Compile Include="Sql\Generating\ReadByKeyProcedureGenerator.cs" />
     <Compile Include="Sql\Generating\SqlGenerationEngine.cs" />
     <Compile Include="Sql\Generating\IGenerator.cs" />
     <Compile Include="Sql\Generating\Length.cs" />
