@@ -44,7 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrudGeneratorFixture.cs" />
     <Compile Include="EngineFixture.cs" />
+    <Compile Include="GeneratorFixtureHelper.cs" />
     <Compile Include="MessageBusFixture.cs" />
     <Compile Include="PortalFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

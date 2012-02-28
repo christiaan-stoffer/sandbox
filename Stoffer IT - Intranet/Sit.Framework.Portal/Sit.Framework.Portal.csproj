@@ -54,6 +54,8 @@
     <Compile Include="Content\NullableAttribute.cs" />
     <Compile Include="Portal.cs" />
     <Compile Include="Dynamic\Proxy.cs" />
+    <Compile Include="Sql\Generating\CreateProcedureGenerator.cs" />
+    <Compile Include="Sql\Generating\DeleteProcedureGenerator.cs" />
     <Compile Include="Sql\Generating\SqlGenerationEngine.cs" />
     <Compile Include="Sql\Generating\IGenerator.cs" />
     <Compile Include="Sql\Generating\Length.cs" />
@@ -62,6 +64,7 @@
     <Compile Include="Sql\Generating\SqlEntityMap.cs" />
     <Compile Include="Sql\Generating\TableGenerator.cs" />
     <Compile Include="Sql\Generating\TypeExtensions.cs" />
+    <Compile Include="Sql\Generating\UpdateProcedureGenerator.cs" />
     <Compile Include="Widgets\WidgetInstance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Content\Widget.cs" />
