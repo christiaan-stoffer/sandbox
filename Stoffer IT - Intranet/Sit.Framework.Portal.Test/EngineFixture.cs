@@ -11,7 +11,7 @@ namespace Sit.Framework.Portal.Test
         [Test]
         public void GenerationTest()
         {
-            var types = new[] {typeof (IAddress)};
+            var types = new[] {typeof (IAddress), typeof(IContact)};
 
             var engine = new SqlGenerationEngine();
 

@@ -17,7 +17,7 @@ namespace Sit.Framework.Portal.Sql.Generating
 
             builder.Append(string.Join(string.Format(",{0}", Environment.NewLine), fields));
             builder.AppendLine(",");
-            builder.AppendLine("CONSTRAINT [PK_Address] PRIMARY KEY CLUSTERED");
+            builder.AppendLine(string.Format("CONSTRAINT [PK_{0}] PRIMARY KEY CLUSTERED", entityInfo.Name));
             builder.AppendLine("(");
             builder.AppendLine("[Key] ASC");
             builder.AppendLine(
